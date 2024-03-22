@@ -42,6 +42,8 @@ services:
       - back
     links:
       - back
+    environment:
+      - BACKEND_URI=http://172.16.25.10:8080
     networks:
       - net
 volumes:
