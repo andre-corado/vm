@@ -33,7 +33,7 @@ services:
     environment:
       - MYSQL_URI=root:${MYSQL_ROOT_PASSWORD}@tcp(mysql:3306)/monitor?charset=utf8&parseTime=true
   frontend:
-    image: andrecorado/front:v0.01
+    image: andrecorado/front:v0.02
     container_name: so1_p1_client
     restart: always
     ports:
