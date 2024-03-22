@@ -11,9 +11,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - db-data:/var/lib/mysql
-    networks:
-      - net
+      - db-data:/var/lib/mysql    
   back:
     image: andrecorado/api:v1.0
     container_name: so1_p1_server
@@ -21,9 +19,7 @@ services:
     pid: host
     restart: always
     ports:
-      - 8080:8080
-    networks:
-      - net
+      - 8080:8080    
     links:
       - db
     volumes:
@@ -43,11 +39,7 @@ services:
     links:
       - back
     environment:
-      - BACKEND_URI=http://172.16.25.10:8080
-    networks:
-      - net
+      - BACKEND_URI=http://172.16.25.10:8080    
 volumes:
   db-data:
-networks:
-  net:
-    driver: bridge
+
